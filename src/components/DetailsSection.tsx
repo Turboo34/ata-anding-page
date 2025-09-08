@@ -5,7 +5,7 @@ const DetailsSection = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    company: ""
+    location: ""
   });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -33,7 +33,7 @@ const DetailsSection = () => {
     setFormData({
       fullName: "",
       email: "",
-      company: ""
+      location: ""
     });
   };
   return <section id="details" className="w-full bg-white py-0">
@@ -48,7 +48,7 @@ const DetailsSection = () => {
             backgroundPosition: "center"
           }}>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold">
-                The details
+                Platform Features
               </h2>
             </div>
             
@@ -58,7 +58,7 @@ const DetailsSection = () => {
             border: "1px solid #ECECEC"
           }}>
               <h3 className="text-lg sm:text-xl font-display mb-6 sm:mb-8">
-                Precision engineering meets adaptive intelligence
+                Trusted community meets intelligent matching
               </h3>
 
               <div className="space-y-4 sm:space-y-6">
@@ -70,7 +70,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Height:</span> 5'8"
+                      <span className="font-semibold text-base">Verified Mechanics:</span> 500+
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Capacity:</span> 55lbs
+                      <span className="font-semibold text-base">Average Rating:</span> 4.8/5
                     </div>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Weight:</span> 140lbs
+                      <span className="font-semibold text-base">Response Time:</span> Under 2 hours
                     </div>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Uptime:</span> 6hr
+                      <span className="font-semibold text-base">Service Areas:</span> 15 Cities
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Movement:</span> 1.5M/S
+                      <span className="font-semibold text-base">Satisfaction:</span> 98%
                     </div>
                   </div>
                 </div>
@@ -139,10 +139,10 @@ const DetailsSection = () => {
             backgroundPosition: "center"
           }}>
               <div className="inline-block px-4 sm:px-6 py-2 border border-white text-white rounded-full text-xs mb-4">
-                Request a demo
+                Join waitlist
               </div>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold mt-auto">
-                See it for yourself
+                Get early access
               </h2>
             </div>
             
@@ -179,10 +179,10 @@ const DetailsSection = () => {
                 <div>
                   <input 
                     type="text" 
-                    name="company" 
-                    value={formData.company} 
+                    name="location" 
+                    value={formData.location} 
                     onChange={handleChange} 
-                    placeholder="Company (optional)" 
+                    placeholder="Location (optional)" 
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
                   />
                 </div>

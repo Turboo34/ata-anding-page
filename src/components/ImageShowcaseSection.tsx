@@ -7,11 +7,11 @@ const ImageShowcaseSection = () => {
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
           <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 mb-3 sm:mb-4">
-            Experience the Future Today
+            Trusted by Drivers Everywhere
           </h2>
           <p className="text-base sm:text-lg text-gray-600">
-            Our cutting-edge humanoid robot is designed to transform how we interact 
-            with technology in everyday environments.
+            Our platform connects you with verified mechanics who understand your needs. 
+            Experience the difference of transparent pricing and quality service.
           </p>
         </div>
         
@@ -19,16 +19,16 @@ const ImageShowcaseSection = () => {
           <div className="w-full">
             <img 
               src="/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png" 
-              alt="Advanced humanoid robot with orange and white design" 
+              alt="Autera car service platform interface showing mechanic matching" 
               className="w-full h-auto object-cover"
             />
           </div>
           <div className="bg-white p-4 sm:p-8">
-            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Next Generation Robotics</h3>
+            <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 sm:mb-4">Community-Driven Car Care</h3>
             <p className="text-gray-700 text-sm sm:text-base">
-              Built with precision engineering and sophisticated AI, our robots seamlessly 
-              integrate into various environments, from homes to hospitals, providing 
-              assistance and enriching human experiences.
+              Built by mechanics and drivers who understand the real challenges of car maintenance. 
+              Our platform ensures you get quality service from trusted professionals in your community, 
+              with transparent pricing and honest reviews.
             </p>
           </div>
         </div>

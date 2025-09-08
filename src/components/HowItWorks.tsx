@@ -48,27 +48,27 @@ const HowItWorks = () => {
   const stepsData = [
     {
       number: "01",
-      title: "Request Access",
-      description: "Fill out the application form to join our early access program and secure your spot in line.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+      title: "Describe Your Need",
+      description: "Tell us about your car issue or service need. Our AI matches you with the best mechanics in your area.",
+      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "02",
-      title: "Personalization",
-      description: "We'll work with you to customize Atlas to your specific needs and preferences.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+      title: "Get Instant Quotes",
+      description: "Receive transparent pricing from verified mechanics. Compare reviews, ratings, and availability.",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "03",
-      title: "Integration",
-      description: "Atlas arrives at your location and is integrated into your living or working environment.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+      title: "Book & Schedule",
+      description: "Choose your preferred mechanic and schedule service at your convenience. Track progress in real-time.",
+      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "04",
-      title: "Adaptation",
-      description: "Through daily interaction, Atlas learns and adapts to your routines, preferences, and needs.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+      title: "Quality Service",
+      description: "Get your car serviced by trusted professionals. Leave a review to help the community grow stronger.",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -118,9 +118,9 @@ const HowItWorks = () => {
           <div className="pulse-chip mx-auto mb-4">
             <span>Process</span>
           </div>
-          <h2 className="section-title mb-4">How Atlas Integrates Into Your Life</h2>
+          <h2 className="section-title mb-4">How Autera Works</h2>
           <p className="section-subtitle mx-auto">
-            A seamless four-step process from request to full integration.
+            From finding the right mechanic to getting your car back on the road - simple, transparent, and reliable.
           </p>
         </div>
         

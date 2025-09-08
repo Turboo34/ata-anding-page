@@ -17,8 +17,8 @@ const Newsletter = () => {
     // Simulate API call
     setTimeout(() => {
       toast({
-        title: "Thank you for subscribing!",
-        description: "You'll receive updates about Atlas soon."
+        title: "Thank you for joining!",
+        description: "You'll receive updates about Autera platform soon."
       });
       setEmail("");
       setIsSubmitting(false);
@@ -34,9 +34,9 @@ const Newsletter = () => {
             </div>
           </div>
           
-          <h2 className="text-5xl font-display font-bold mb-4 text-left">Subscribe to the newsletter</h2>
+          <h2 className="text-5xl font-display font-bold mb-4 text-left">Join the Autera community</h2>
           <p className="text-xl text-gray-700 mb-10 text-left">
-            Be first to hear about breakthroughs, partnerships, and deployment opportunities
+            Be first to hear about platform updates, new mechanic partnerships, and exclusive early access opportunities
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-start md:items-center">
@@ -44,7 +44,7 @@ const Newsletter = () => {
               <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email address" className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700" required />
             </div>
             <button type="submit" disabled={isSubmitting} className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4">
-              {isSubmitting ? "Submitting..." : "Submit"}
+              {isSubmitting ? "Joining..." : "Join Community"}
             </button>
           </form>
         </div>
