@@ -152,16 +152,14 @@ const Hero = () => {
               </div>
             ) : (
               <>
-              <div className="absolute inset-0 bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl"></div>
-              <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+              <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl flex items-center justify-center bg-white">
                 <img 
                   ref={imageRef} 
                   src="/lovable-uploads/f4c5bafd-c397-41a1-a4b9-69177a5345df.png" 
                   alt="Autera Car Service App" 
-                  className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
+                  className="w-full h-auto object-contain transition-transform duration-500 ease-out max-w-md mx-auto" 
                   style={{ transformStyle: 'preserve-3d' }} 
                 />
-                <div className="absolute inset-0" style={{ backgroundImage: 'url("/hero-image.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay', opacity: 0.5 }}></div>
               </div>
               </>
             )}
