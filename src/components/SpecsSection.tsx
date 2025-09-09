@@ -20,7 +20,7 @@ const SpecsSection = () => {
         <div className="max-w-5xl pl-4 sm:pl-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display leading-tight mb-8 sm:mb-12">
             <span className="block bg-clip-text text-transparent bg-[url('/text-mask-image.jpg')] bg-cover bg-center">
-              Autera connects drivers with verified mechanics in a trusted community. From routine maintenance to emergency repairs, our platform ensures quality service with transparent pricing and real reviews from people you can trust.
+              Currently building the UK's most trusted car service platform. AI-powered diagnostics meet verified local mechanics in one revolutionary app—coming to your area soon.
             </span>
           </h2>
         </div>

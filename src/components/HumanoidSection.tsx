@@ -101,7 +101,7 @@ const HumanoidSection = () => {
             </div>
             
             <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
-              Why Autera Works
+              The UK's First AI Car Diagnostic Platform
             </h2>
           </div>
           
@@ -135,7 +135,7 @@ const HumanoidSection = () => {
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    Built by mechanics who understand the real problems drivers face
+                    Currently being built by mechanics and drivers, for mechanics and drivers
                   </h3>
                 </div>
               </div>
@@ -171,7 +171,7 @@ const HumanoidSection = () => {
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    AI-powered matching connects you with the right mechanic for your needs
+                    AI diagnostics meet trusted local mechanics—service right to your door
                   </h3>
                 </div>
               </div>

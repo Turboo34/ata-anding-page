@@ -105,14 +105,14 @@ const Hero = () => {
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.1s" }}
             >
-              Autera: Your Car Repairs, Simplified
+              Car won't start? Strange noise? Get an instant AI diagnosis and book a trusted mechanic near you—no waiting rooms or tow trucks.
             </h1>
             
             <p 
               style={{ animationDelay: "0.3s" }} 
               className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
             >
-              Get transparent pricing, read real reviews, and book with confidence.
+              Autera is a new UK-first platform combining AI car diagnostics with trusted local mechanics—currently being built. Stay in the loop for early access.
             </p>
             
             <div 
@@ -134,7 +134,7 @@ const Hero = () => {
                   border: '1px solid white',
                 }}
               >
-                Request Access
+                Get Early Access
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

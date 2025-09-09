@@ -9,51 +9,37 @@ interface TestimonialProps {
   backgroundImage?: string;
 }
 
-const testimonials: TestimonialProps[] = [{
-  content: "Finally, a platform that gets it right. Found a trusted mechanic in minutes, got upfront pricing, and excellent service. No more workshop roulette!",
-  author: "Maria Rodriguez",
-  role: "Daily Commuter, Los Angeles",
-  gradient: "from-blue-700 via-indigo-800 to-purple-900",
-  backgroundImage: "/background-section1.png"
-}, {
-  content: "As a mechanic, Autera connects me with customers who value quality work. The platform's verification process means I work with serious clients who respect our craft.",
-  author: "James Thompson",
-  role: "Certified Mechanic, Dallas",
-  gradient: "from-indigo-900 via-purple-800 to-orange-500",
-  backgroundImage: "/background-section2.png"
-}, {
-  content: "Transparent pricing changed everything for me. No more surprise bills or unclear estimates. I know exactly what I'm paying for and why.",
-  author: "Sarah Chen",
-  role: "Fleet Manager, Seattle",
-  gradient: "from-purple-800 via-pink-700 to-red-500",
-  backgroundImage: "/background-section3.png"
-}, {
-  content: "The community aspect is what sets Autera apart. Real reviews from real drivers help me make informed decisions about my car's care.",
-  author: "Mike Johnson",
-  role: "Rideshare Driver, Miami",
-  gradient: "from-orange-600 via-red-500 to-purple-600",
-  backgroundImage: "/background-section1.png"
-}];
+const industryQuotes: { quote: string; source: string; role: string; }[] = [
+  {
+    quote: "AI's ability to provide immediate diagnostic support helps level the playing field, empowering shops with the intelligence and expertise they need without requiring additional personnel.",
+    source: "Automotive Industry Expert",
+    role: "Industry Analysis"
+  },
+  {
+    quote: "Vehicle diagnostics and service benefit from AI-powered onboard systems that predict parts failures before they happen.",
+    source: "Automotive Technology Review", 
+    role: "Technology Assessment"
+  }
+];
 
-const TestimonialCard = ({
-  content,
-  author,
-  role,
-  backgroundImage = "/background-section1.png"
-}: TestimonialProps) => {
-  return <div className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden" style={{
-    backgroundImage: `url('${backgroundImage}')`
-  }}>
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
-      
+const IndustryQuoteCard = ({
+  quote,
+  source,
+  role
+}: { quote: string; source: string; role: string; }) => {
+  return (
+    <div className="bg-gradient-to-br from-slate-50 to-white rounded-lg p-8 h-full flex flex-col justify-between border border-gray-200 transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden shadow-lg">
       <div className="relative z-0">
-        <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
-        <div>
-          <h4 className="font-semibold text-xl">{author}</h4>
-          <p className="text-white/80">{role}</p>
+        <blockquote className="text-xl mb-8 font-medium leading-relaxed italic text-gray-900">
+          "{quote}"
+        </blockquote>
+        <div className="border-t pt-4">
+          <p className="font-semibold text-lg text-gray-900">{source}</p>
+          <p className="text-gray-600 text-sm">{role}</p>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 const Testimonials = () => {
@@ -68,10 +54,21 @@ const Testimonials = () => {
           </div>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">What drivers & mechanics say</h2>
+        <h2 className="text-5xl font-display font-bold mb-12 text-left">Industry Recognition</h2>
+        
+        <p className="section-subtitle mb-12 text-left max-w-3xl">
+          Leading automotive experts recognize the transformative potential of AI-powered diagnostics in car servicing.
+        </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => <TestimonialCard key={index} content={testimonial.content} author={testimonial.author} role={testimonial.role} gradient={testimonial.gradient} backgroundImage={testimonial.backgroundImage} />)}
+          {industryQuotes.map((quote, index) => (
+            <IndustryQuoteCard 
+              key={index} 
+              quote={quote.quote} 
+              source={quote.source} 
+              role={quote.role} 
+            />
+          ))}
         </div>
       </div>
     </section>;

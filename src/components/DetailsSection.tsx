@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 const DetailsSection = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
     email: "",
-    location: ""
+    city: ""
   });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -21,19 +20,18 @@ const DetailsSection = () => {
     e.preventDefault();
 
     // Simple validation
-    if (!formData.fullName || !formData.email) {
-      toast.error("Please fill in all required fields");
+    if (!formData.email || !formData.city) {
+      toast.error("Please fill in both email and city");
       return;
     }
 
     // Demo form submission
-    toast.success("Request submitted successfully!");
+    toast.success("Thank you! We'll notify you when Autera launches in your area.");
 
     // Reset form
     setFormData({
-      fullName: "",
       email: "",
-      location: ""
+      city: ""
     });
   };
   return <section id="details" className="w-full bg-white py-0">
@@ -58,7 +56,7 @@ const DetailsSection = () => {
             border: "1px solid #ECECEC"
           }}>
               <h3 className="text-lg sm:text-xl font-display mb-6 sm:mb-8">
-                Trusted community meets intelligent matching
+                Coming soon to your area
               </h3>
 
               <div className="space-y-4 sm:space-y-6">
@@ -70,7 +68,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Verified Mechanics:</span> 500+
+                      <span className="font-semibold text-base">Status:</span> Currently in development
                     </div>
                   </div>
                 </div>
@@ -83,7 +81,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Average Rating:</span> 4.8/5
+                      <span className="font-semibold text-base">Launch:</span> Early 2025
                     </div>
                   </div>
                 </div>
@@ -96,7 +94,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Response Time:</span> Under 2 hours
+                      <span className="font-semibold text-base">Focus:</span> UK vehicle owners
                     </div>
                   </div>
                 </div>
@@ -109,20 +107,7 @@ const DetailsSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Service Areas:</span> 15 Cities
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-dark-900 flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Satisfaction:</span> 98%
+                      <span className="font-semibold text-base">Technology:</span> AI diagnostics
                     </div>
                   </div>
                 </div>
@@ -154,18 +139,6 @@ const DetailsSection = () => {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <input 
-                    type="text" 
-                    name="fullName" 
-                    value={formData.fullName} 
-                    onChange={handleChange} 
-                    placeholder="Full name" 
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
-                    required 
-                  />
-                </div>
-                
-                <div>
-                  <input 
                     type="email" 
                     name="email" 
                     value={formData.email} 
@@ -179,11 +152,12 @@ const DetailsSection = () => {
                 <div>
                   <input 
                     type="text" 
-                    name="location" 
-                    value={formData.location} 
+                    name="city" 
+                    value={formData.city} 
                     onChange={handleChange} 
-                    placeholder="Location (optional)" 
+                    placeholder="Your city" 
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
+                    required 
                   />
                 </div>
                 
@@ -192,7 +166,7 @@ const DetailsSection = () => {
                     type="submit" 
                     className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300"
                   >
-                    Request access
+                    Get Early Access
                   </button>
                 </div>
               </form>
