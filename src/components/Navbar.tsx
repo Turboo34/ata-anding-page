@@ -36,7 +36,7 @@ const Navbar = () => {
         e.preventDefault();
         scrollToTop();
       }} aria-label="Autera">
-          <span className="text-xl font-bold text-primary animate-fade-in">Autera</span>
+          <span className="text-xl font-bold text-primary animate-fade-in">AUTERA</span>
         </a>
 
         {/* Desktop Navigation */}
