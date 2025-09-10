@@ -157,7 +157,7 @@ const Hero = () => {
                   ref={imageRef} 
                   src="/lovable-uploads/f4c5bafd-c397-41a1-a4b9-69177a5345df.png" 
                   alt="Autera Car Service App" 
-                  className="w-full h-auto object-contain transition-transform duration-500 ease-out max-w-md mx-auto" 
+                  className="w-full h-auto object-contain transition-transform duration-500 ease-out max-w-md mx-auto opacity-80" 
                   style={{ transformStyle: 'preserve-3d' }} 
                 />
               </div>
