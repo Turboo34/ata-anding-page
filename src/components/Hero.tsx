@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import LottieAnimation from "./LottieAnimation";
 
 const Hero = () => {
@@ -119,8 +120,8 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.7s" }}
             >
-              <a 
-                href="#get-access" 
+              <Link 
+                to="/request-access" 
                 className="flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
                   backgroundColor: '#FE5C02',
@@ -136,7 +137,7 @@ const Hero = () => {
               >
                 Get Early Access
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
             </div>
           </div>
           

@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -53,10 +54,10 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#details" className="button-primary group flex items-center justify-center w-full sm:w-auto">
+            <Link to="/request-access" className="button-primary group flex items-center justify-center w-full sm:w-auto">
               Join Waitlist
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
             <a href="#newsletter" className="button-secondary w-full sm:w-auto text-center">
               Stay Updated
             </a>
