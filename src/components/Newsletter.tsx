@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
 const Newsletter = () => {
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !city) {
+    if (!fullName || !email || !city) {
       toast({
-        title: "Please enter both your email and city",
+        title: "Please enter your full name, email and city",
         variant: "destructive"
       });
       return;
@@ -23,6 +24,7 @@ const Newsletter = () => {
         title: "Thank you for your interest!",
         description: "We'll notify you when Autera launches in your area."
       });
+      setFullName("");
       setEmail("");
       setCity("");
       setIsSubmitting(false);
@@ -46,6 +48,14 @@ const Newsletter = () => {
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
+            <input
+              type="text"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              placeholder="Enter your full name"
+              className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+              required
+            />
             <input
               type="email"
               value={email}
