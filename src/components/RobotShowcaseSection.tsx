@@ -35,10 +35,6 @@ const RobotShowcaseSection = () => {
       <div className="container px-6 lg:px-8 mx-auto">
         <div className="flex flex-col items-center opacity-0 translate-y-10 transition-all duration-1000">
           <div className="mb-12 text-center">
-            <div className="pulse-chip mb-4">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">03</span>
-              <span>Find Trusted Mechanics</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
               Smart Matching Meets <span className="text-[#FC4D0A]">Trusted Service</span>
             </h2>
