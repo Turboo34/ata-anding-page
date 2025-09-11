@@ -46,7 +46,7 @@ const DetailsSection = () => {
             backgroundPosition: "center"
           }}>
               <h2 className="text-2xl sm:text-3xl font-display text-white font-bold">
-                Platform Features
+                Where We're At
               </h2>
             </div>
             
@@ -61,53 +61,60 @@ const DetailsSection = () => {
 
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-dark-900 flex items-center justify-center mt-1 flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 flex-shrink-0">
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Status:</span> Currently in development
+                      <span className="font-semibold text-base">Development:</span> Currently in progress
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-dark-900 flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                  <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 border-2 border-gray-500 rounded-sm"></div>
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Launch:</span> Early 2025
+                      <span className="font-semibold text-base">Beta Testing:</span> Planned late 2025
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-dark-900 flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                  <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 border-2 border-gray-500 rounded-sm"></div>
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Focus:</span> UK vehicle owners
+                      <span className="font-semibold text-base">Full Launch:</span> Early 2026
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-dark-900 flex items-center justify-center mt-1 flex-shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 flex-shrink-0">
                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div className="flex-1">
                     <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
-                      <span className="font-semibold text-base">Technology:</span> AI diagnostics
+                      <span className="font-semibold text-base">Focus:</span> UK vehicle owners first
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 border-2 border-gray-500 rounded-sm"></div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="p-3 rounded-lg bg-gray-50/80 backdrop-blur-sm border border-gray-100">
+                      <span className="font-semibold text-base">AI Diagnostics:</span> Coming in version 2
                     </div>
                   </div>
                 </div>
