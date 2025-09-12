@@ -1,30 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
-    if (!fullName || !email || !city) {
-      toast({
-        title: "Please fill in all fields",
-        description: "Full name, email and city are required",
-        variant: "destructive"
-      });
-      return;
-    }
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      toast({
-        title: "Thanks for joining our Waitlist!",
-        description: "We will notify you when Autera Launches."
-      });
-      setFullName("");
-      setEmail("");
-      setCity("");
-      setIsSubmitting(false);
-    }, 1000);
-
+const RequestAccess = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -61,63 +39,63 @@ import { Link } from "react-router-dom";
 
             <div className="glass-card p-8">
               <form 
-  name="waitlist" 
-  method="POST" 
-  data-netlify="true" 
-  action="/thank-you"
-  className="space-y-6"
->
-  <input type="hidden" name="form-name" value="waitlist" />
-  
-  <div>
-    <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
-      Full Name *
-    </label>
-    <input
-      id="fullName"
-      name="fullName"
-      type="text"
-      placeholder="Enter your full name"
-      className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
-      required
-    />
-  </div>
+                name="waitlist" 
+                method="POST" 
+                data-netlify="true" 
+                action="/thank-you"
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="waitlist" />
+                
+                <div>
+                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="Enter your full name"
+                    className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+                    required
+                  />
+                </div>
 
-  <div>
-    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-      Email Address *
-    </label>
-    <input
-      id="email"
-      name="email"
-      type="email"
-      placeholder="Enter your email address"
-      className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
-      required
-    />
-  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+                    required
+                  />
+                </div>
 
-  <div>
-    <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
-      City *
-    </label>
-    <input
-      id="city"
-      name="city"
-      type="text"
-      placeholder="Enter your city"
-      className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
-      required
-    />
-  </div>
+                <div>
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    City *
+                  </label>
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    placeholder="Enter your city"
+                    className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700"
+                    required
+                  />
+                </div>
 
-  <button
-    type="submit"
-    className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300"
-  >
-    Request Early Access
-  </button>
-</form>
+                <button
+                  type="submit"
+                  className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300"
+                >
+                  Request Early Access
+                </button>
+              </form>
 
               <div className="mt-6 text-center text-sm text-gray-500">
                 <p>We'll contact you as soon as Autera launches in your area.</p>
@@ -128,5 +106,6 @@ import { Link } from "react-router-dom";
       </main>
     </div>
   );
+};
 
 export default RequestAccess;
