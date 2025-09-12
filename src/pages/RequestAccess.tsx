@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
       setCity("");
       setIsSubmitting(false);
     }, 1000);
-  };
+  }
 
   return (
     <div className="min-h-screen bg-white">
