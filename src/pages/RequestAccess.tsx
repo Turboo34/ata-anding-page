@@ -128,6 +128,5 @@ import { Link } from "react-router-dom";
       </main>
     </div>
   );
-};
 
 export default RequestAccess;
