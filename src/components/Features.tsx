@@ -95,7 +95,7 @@ const Features = () => {
             <span>Features</span>
           </div>
           <h2 className="section-title mb-3 sm:mb-4 opacity-0 fade-in-element">
-            Car Repairs, <span style={{ color: '#FE5C02' }}>Simplified</span>
+            How <span style={{ color: '#FE5C02' }}>Autera</span> works for you
           </h2>
           <p className="section-subtitle mx-auto opacity-0 fade-in-element">
             The UK's first AI-powered car diagnostic platform connecting you with trusted mechanics—coming soon.
