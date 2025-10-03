@@ -117,7 +117,7 @@ const Hero = () => {
             </p>
             
             <div 
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
+              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in mt-8" 
               style={{ animationDelay: "0.7s" }}
             >
               <Link 
