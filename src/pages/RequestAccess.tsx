@@ -56,7 +56,7 @@ const RequestAccess = () => {
       <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center space-x-2" aria-label="Back to home">
-            <span className="text-xl font-bold text-primary">AUTERA</span>
+            <img src="/autera-logo.png" alt="Autera" className="h-10 w-auto" />
           </Link>
           <Link 
             to="/" 
