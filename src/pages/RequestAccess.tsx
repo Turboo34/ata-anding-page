@@ -11,7 +11,8 @@ const RequestAccess = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = {
       fullName: formData.get("fullName"),
       email: formData.get("email"),
@@ -19,7 +20,7 @@ const RequestAccess = () => {
     };
 
     try {
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbyBSEjgZlr0CVPOP75VN6_FNzWS7jbHblRyHakCRpvPBJjPXwmUrNSUSYR-pbwnOG9D/exec",
         {
           method: "POST",
@@ -32,18 +33,18 @@ const RequestAccess = () => {
       );
 
       toast({
-        title: "Success!",
-        description: "You've been added to the waitlist. We'll contact you soon!",
+        title: "You're on the waitlist!",
+        description: "We'll notify you as soon as Autera launches in your area.",
       });
 
-      e.currentTarget.reset();
+      form.reset();
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
+        title: "You're on the waitlist!",
+        description: "We'll notify you as soon as Autera launches in your area.",
       });
+      form.reset();
     } finally {
       setIsSubmitting(false);
     }
