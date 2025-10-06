@@ -36,7 +36,7 @@ const Navbar = () => {
         e.preventDefault();
         scrollToTop();
       }} aria-label="Autera">
-          <img src="/autera-logo.jpg" alt="Autera" className="h-8 w-auto animate-fade-in" />
+          <img src="/autera-logo.png" alt="Autera" className="h-10 w-auto animate-fade-in" />
         </a>
 
         {/* Desktop Navigation */}
