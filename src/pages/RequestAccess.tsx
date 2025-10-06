@@ -1,8 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const RequestAccess = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      city: formData.get("city"),
+    };
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyBSEjgZlr0CVPOP75VN6_FNzWS7jbHblRyHakCRpvPBJjPXwmUrNSUSYR-pbwnOG9D/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      toast({
+        title: "Success!",
+        description: "You've been added to the waitlist. We'll contact you soon!",
+      });
+
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -39,13 +85,9 @@ const RequestAccess = () => {
 
             <div className="glass-card p-8">
               <form 
-                name="waitlist" 
-                method="POST" 
-                data-netlify="true" 
-                action="/thank-you"
+                onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                <input type="hidden" name="form-name" value="waitlist" />
                 
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -91,9 +133,10 @@ const RequestAccess = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Request Early Access
+                  {isSubmitting ? "Submitting..." : "Request Early Access"}
                 </button>
               </form>
 
