@@ -1,8 +1,12 @@
 
 import React, { useState } from "react";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
+
 const DetailsSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
+    fullName: "",
     email: "",
     city: ""
   });
@@ -16,23 +20,56 @@ const DetailsSection = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simple validation
-    if (!formData.email || !formData.city) {
-      toast.error("Please fill in both email and city");
-      return;
+    const form = e.currentTarget;
+    const data = {
+      fullName: formData.fullName,
+      email: formData.email,
+      city: formData.city,
+    };
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyBSEjgZlr0CVPOP75VN6_FNzWS7jbHblRyHakCRpvPBJjPXwmUrNSUSYR-pbwnOG9D/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      toast({
+        title: "You're on the waitlist!",
+        description: "We'll notify you as soon as Autera launches in your area.",
+      });
+
+      form.reset();
+      setFormData({
+        fullName: "",
+        email: "",
+        city: ""
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "You're on the waitlist!",
+        description: "We'll notify you as soon as Autera launches in your area.",
+      });
+      form.reset();
+      setFormData({
+        fullName: "",
+        email: "",
+        city: ""
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    // Demo form submission
-    toast.success("Thank you! We'll notify you when Autera launches in your area.");
-
-    // Reset form
-    setFormData({
-      email: "",
-      city: ""
-    });
   };
   return <section id="details" className="w-full bg-white py-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
@@ -120,26 +157,50 @@ const DetailsSection = () => {
             backgroundColor: "#FFFFFF",
             border: "1px solid #ECECEC"
           }}>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
+                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
                   <input 
+                    id="fullName"
+                    type="text" 
+                    name="fullName" 
+                    value={formData.fullName} 
+                    onChange={handleChange} 
+                    placeholder="Enter your full name" 
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
+                    required 
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input 
+                    id="email"
                     type="email" 
                     name="email" 
                     value={formData.email} 
                     onChange={handleChange} 
-                    placeholder="Email address" 
+                    placeholder="Enter your email address" 
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
                     required 
                   />
                 </div>
                 
                 <div>
+                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                    City *
+                  </label>
                   <input 
+                    id="city"
                     type="text" 
                     name="city" 
                     value={formData.city} 
                     onChange={handleChange} 
-                    placeholder="Your city" 
+                    placeholder="Enter your city" 
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent" 
                     required 
                   />
@@ -147,10 +208,11 @@ const DetailsSection = () => {
                 
                 <div>
                   <button 
-                    type="submit" 
-                    className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300"
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full px-6 py-3 bg-pulse-500 hover:bg-pulse-600 text-white font-medium rounded-full transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Get Early Access
+                    {isSubmitting ? "Submitting..." : "Get Early Access"}
                   </button>
                 </div>
               </form>
