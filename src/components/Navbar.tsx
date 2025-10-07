@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
             Home
           </a>
           <a href="#features" className="nav-link">About</a>
-          <a href="/request-access" className="nav-link">Join</a>
+          <Link to="/request-access" className="nav-link">Join</Link>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
@@ -74,12 +75,12 @@ const Navbar = () => {
         }}>
             About
           </a>
-          <a href="/request-access" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" onClick={() => {
+          <Link to="/request-access" className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" onClick={() => {
           setIsMenuOpen(false);
           document.body.style.overflow = '';
         }}>
             Join
-          </a>
+          </Link>
         </nav>
       </div>
     </header>;
